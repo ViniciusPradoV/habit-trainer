@@ -11,18 +11,44 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
        
-           <ImageView
-                   android:layout_width="32dp"
-                   android:layout_height="32dp"/>
+       <RelativeLayout
+               android:padding="16dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
        
-       <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"/>
+       
 
-       <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"/>
+       <ImageView
+               android:id="@+id/iv_icon"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentTop="true"
+               android:layout_marginRight="16dp"
+               android:layout_width="32dp"
+               android:layout_height="32dp"
+               android:contentDescription="@string/habit" android:layout_alignParentStart="true"
+               android:layout_marginEnd="16dp"/>
 
+      <TextView
+              android:id="@+id/tv_title"
+              android:layout_toRightOf="@+id/iv_icon"
+              android:layout_alignParentTop="true"
+              android:text="Drink Water"
+              android:textSize="30sp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_toEndOf="@+id/iv_icon"/>
+
+      <TextView
+              android:id="@+id/tv_description"
+              android:text="Refreshing glass of water gets you hydrated"
+              android:layout_alignRight="@+id/iv_icon"
+              android:layout_below="@id/tv_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignEnd="@+id/iv_icon"/>
+
+       </RelativeLayout>
 
    </androidx.cardview.widget.CardView>
+
 </ScrollView>
