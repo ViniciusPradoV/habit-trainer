@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">HabitTrainer</string>
     <string name="habit">habit</string>
+    <string name="drink_water">Drink water</string>
+    <string name="refreshing_glass_of_water_gets_you_hydrated">Refreshing glass of water gets you hydrated</string>
+    <string name="habit_icon">habit_icon</string>
+    <string name="drink_water_description">A refreshing glass of water gets you hydrated</string>
+    <string name="drink_water">Drink water</string>
 </resources>
