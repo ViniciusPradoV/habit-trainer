@@ -1,6 +1,9 @@
 package com.pradovinicius.habitrainer
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +22,27 @@ class MainActivity : AppCompatActivity() {
 
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = HabitsAdapter(getSampleHabits())
+
+
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if(item?.itemId == R.id.add_habit){
+            switch(CreateHabitActivity::class.java)
+
+        }
+
+        return true
+
+    }
+
+    private fun switch(c: Class<*>) {
+        val intent = Intent(this, c)
+        startActivity(intent)
+    }
 }

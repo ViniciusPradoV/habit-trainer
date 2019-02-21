@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreateHabitActivity"
+        android:orientation="vertical">
+
+    <EditText
+            android:id="@+id/habit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="@string/create_a_habit_title"
+            android:inputType="text"/>
+
+    <EditText
+            android:id="@+id/habit_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="@string/create_a_habit_description"
+            android:inputType="textMultiLine"
+            android:minLines="2"
+            android:lines="8"
+            android:maxLines="10"
+            android:scrollbars="vertical"
+    />
+
+    <Button
+            android:id="@+id/btn_choose_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/choose_an_image_for_the_habit"
+            android:onClick="chooseImage"
+            android:background="#00897B"
+    />
+
+    <ImageView
+            android:id="@+id/image_preview"
+            android:layout_gravity="center_horizontal"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:contentDescription="@string/create_habit_image"/>
+
+    <Button android:id="@+id/save_habit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00897B"
+            android:onClick="storeHabit"
+            android:hint="@string/save"/>
+
+    <TextView
+            android:id="@+id/error_message"
+            android:visibility="invisible"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B00020"
+    />
+
+</LinearLayout>

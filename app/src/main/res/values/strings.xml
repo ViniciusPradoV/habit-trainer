@@ -5,4 +5,10 @@
     <string name="refreshing_glass_of_water_gets_you_hydrated">Refreshing glass of water gets you hydrated</string>
     <string name="habit_icon">habit_icon</string>
     <string name="drink_water_description">A refreshing glass of water gets you hydrated</string>
+    <string name="begin_habit">Begin the new habit…</string>
+    <string name="create_habit_image">habit_image</string>
+    <string name="create_a_habit_title">Create a habit title</string>
+    <string name="create_a_habit_description">Create a habit description</string>
+    <string name="choose_an_image_for_the_habit">Choose an image for the habit</string>
+    <string name="save">Save</string>
 </resources>
