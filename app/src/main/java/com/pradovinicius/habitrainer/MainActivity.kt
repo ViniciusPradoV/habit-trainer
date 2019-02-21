@@ -2,6 +2,7 @@ package com.pradovinicius.habitrainer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,9 +13,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        tv_title.text = getString(R.string.drink_water)
-        tv_description.text = getString(R.string.drink_water_description)
-        iv_icon.setImageResource(R.drawable.water)
+        // Adapter -> defines data
+        // Recycler View -> implement 3 methods
+        rv.setHasFixedSize(true)
+
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.adapter = HabitsAdapter(getSampleHabits())
     }
 
 }
