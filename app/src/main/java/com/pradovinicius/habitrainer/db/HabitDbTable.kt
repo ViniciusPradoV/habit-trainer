@@ -50,18 +50,26 @@ class HabitDbTable(context: Context) {
 
         val cursor = db.simpleQuery(HabitEntry.TABLE_NAME,columns,order)
 
-        val habits = mutableListOf<Habit>()
-        while (cursor.moveToNext()){
-            val title = cursor.getString(HabitEntry.TITLE_COL)
-            val description = cursor.getString(HabitEntry.DESCR_COL)
-            val bitmap = cursor.getBitmap(HabitEntry.IMAGE_COL)
-            habits.add(Habit(title, description, bitmap))
-        }
-        cursor.close()
+        val habits = parseHabitsFrom(cursor)
 
         return habits
 
 
+    }
+
+    private fun parseHabitsFrom(cursor: Cursor): MutableList<Habit> {
+        val habits = mutableListOf<Habit>()
+        with(cursor) {
+            while (moveToNext()) {
+                val title = getString(HabitEntry.TITLE_COL)
+                val description = getString(HabitEntry.DESCR_COL)
+                val bitmap = getBitmap(HabitEntry.IMAGE_COL)
+                habits.add(Habit(title, description, bitmap))
+            }
+
+            close()
+        }
+        return habits
     }
 
 }
