@@ -10,6 +10,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import com.pradovinicius.habitrainer.db.HabitDbTable
 import kotlinx.android.synthetic.main.activity_create_habit.*
 import java.io.IOException
 
@@ -39,7 +40,19 @@ class CreateHabitActivity : AppCompatActivity() {
 
         // Store the habit
 
-        error_message.visibility = View.INVISIBLE
+        val title = habit_title.text.toString()
+        val description = habit_description.text.toString()
+        val habit = Habit(title, description,imageBitmap!!)
+
+        val id = HabitDbTable(this).store(habit)
+
+        if(id == -1L){
+            displayErrorMessage("Habit could not be stored")
+        }else{
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
